@@ -9,7 +9,9 @@
 .chat-side {
   width: 260px;
   color: #eeeeee;
-
+  a {
+    color: #eeeeee;
+  }
   .side-header {
     background-color: #253141;
     height: 100px;
@@ -48,7 +50,7 @@
     }
     &__latest-message {
         font-size: 11px;
-        }
+       }
     }
   }
 
@@ -90,7 +92,7 @@
   }
 }
 
-.message {
+.messages {
   background-color: #fafafa;
   height: calc(100vh - 190px);
   padding: 46px 40px;
@@ -108,7 +110,7 @@
       font-size: 12px;
       margin-left: 10px;
     }
-    &__info-text {
+    &__text {
       color: #434A54;
       font-size: 14px;
   }
@@ -121,38 +123,34 @@
 
   form {
     display: flex;
-    .input-box {
-      width: 100%;
-      display: flex;
-      position: relative;
-  
-    &__text {
-      height: 50px;
-      width: 100%;
-      border-style:none ;
-      padding: 0 40px 0 10px;
-    }
-    &__image {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.3rem;
-      cursor: pointer;
-
-
-      &__file {
-        display: none;
+      .input-box {
+        width: 100%;
+        position: relative;
+        &__text {
+            height: 50px;
+            width: 100%;
+            border-style:none ;
+            padding: 0 40px 0 10px;
+          }
+          &__image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            .hidden {
+            display: none;
       }
     }
   }
-  .submit-btn {
-    width: 100px;
-    height: 50px;
-    background-color: #38aef0;
-    color: #eeeeee;
-    margin-left: 15px;
-    padding: 0 30px;
-    cursor: pointer;
+      .form__submit {
+        width: 100px;
+        height: 50px;
+        background-color: #38aef0;
+        color: #eeeeee;
+        margin-left: 15px;
+        padding: 0 30px;
+        cursor: pointer;
   }
   }
 }
