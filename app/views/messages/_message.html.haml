@@ -1,11 +1,11 @@
 .messaage{data: {message: {id: message.id}}}
   .message-info
-    .message__info-talker
+    .message-info-talker
       = message.user.name
-    .message__info-date
+    .message-info-date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .message-text
     - if message.content.present?
-      %p.message-info__text
+      %p.message-text-text
         = message.content
     = image_tag message.image.url, class: 'message-info__text__image' if message.image.present?
