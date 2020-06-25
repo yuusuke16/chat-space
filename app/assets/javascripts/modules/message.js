@@ -4,15 +4,15 @@ $(function(){
           var html =
           `<div class="message" data-message-id=${message.id}>
             <div class="message-info">
-              <div class="message__info-talker">
+              <div class="message-info-talker">
                 ${message.user_name}
               </div>
-              <div class="message__info-data">
+              <div class="message-info-data">
                 ${message.created_at}
               </div>
             </div>
             <div class="message-text">
-              <p class="message-info__text">
+              <p class="message-text-text">
                 ${message.content}
               </p>
             </div>
@@ -23,15 +23,15 @@ $(function(){
           var html =
           `<div class="message" data-message-id=${message.id}>
             <div class="message-info">
-              <div class="message__info-talker">
+              <div class="message-info-talker">
                 ${message.user_name}
               </div>
-              <div class="message__info-data">
+              <div class="message-info-data">
                 ${message.created_at}
                 </div>
               </div>
             <div class="message-text">
-              <p class="message-info__text">
+              <p class="message-text-text">
                 ${message.content}
               </p>
             </div>`
@@ -53,15 +53,18 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-       $('form')[0].reset();
-       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('form')[0].reset();
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.form__submit').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.form__submit').prop("disabled", false);
   });
-    return false;
   })
 });
+
+/*
  var reloadMessages = function() {
    var last_message_id = $('.message:last').data("message-id");
    $.ajax({
@@ -70,7 +73,7 @@ $(function(){
      dataType: 'json',
      data: {id: last_message_id}
    })
-   .done(function(message) {
+   .done(function(messages) {
     if (messages.length !== 0) {
      var insertHTML = '';
      $.each(messages, function(i, message) {
@@ -89,3 +92,4 @@ $(function(){
     }
     });
  };
+ */

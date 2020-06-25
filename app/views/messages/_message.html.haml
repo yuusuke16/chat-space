@@ -1,8 +1,8 @@
-.messaage{data: {message: {id: message.id}}}
+.message{data: {message: {id: message.id}}}
   .message-info
     .message-info-talker
       = message.user.name
-    .message-info-date
+    .message-info-data
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .message-text
     - if message.content.present?
